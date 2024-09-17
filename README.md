@@ -1,0 +1,1 @@
+This entire thing has been a project to make a keyboard that had every quality I liked in one except for having a usb hub (I figured I could make one of those later). Unfortunately this entire thing has spiraled out of control and now I have even learned how to use this silly thing called GitHub. I want to cry.
