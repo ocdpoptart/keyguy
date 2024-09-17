@@ -1,0 +1,6 @@
+you know what would be funny if the leds don't work
+
+if that is the case that fucking sucks, but go back to the jojos keyboard as a referacne to see the differnces both between the kicad model after checking that see if you can find clues in the config.yaml for that project
+
+the plate does not have mounting holes that must be corrected in the next model
+

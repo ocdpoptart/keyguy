@@ -1,0 +1,656 @@
+units:
+  # Proxy Spacing Variables
+  kx: cx
+  ky: cy
+  # Padding Variables
+  px: kx + 2
+  py: ky + 2
+  # More Padding Variables
+  dpx: kx + 4
+  dpy: ky + 4
+  # M2 Screw Inserts
+  screwSize: 1.5
+  standoffSize: 2.5
+
+points:
+  zones:
+    matrix:
+          # Fix placement on KiCAD sheet.
+      anchor:
+        shift: [70, -100]
+      key:
+        padding: 1ky
+        spread: 1kx
+      columns:
+        hell:
+          key.column_net: P031
+        pinky:
+          key.column_net: P029
+          rows.last.skip: true
+        ring:
+          key.column_net: P002
+          rows.last.skip: true
+        middle:
+          key.column_net: P115
+          rows.last.skip: true
+        index:
+          key.column_net: P113
+          rows.last.skip: true
+        inner:
+          key.column_net: P111
+          rows.last.skip: true
+      rows:
+        last:
+          row_net: P010
+        bottom:
+          row_net: P009
+        home:
+          row_net: P106
+        top:
+          row_net: P104
+    thumbs:
+      key:
+        padding: 1ky
+        spread: 1kx
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [ 2 , -2 ]
+      columns:
+        layer:
+          key:
+            column_net: P113
+            splay: -20
+        space:
+          key.column_net: P111
+      rows:
+        cluster:
+          shift: [ .75kx , -1ky]
+          row_net: P010
+    ethumb:
+      key:
+        padding: 1ky
+        spread: 1kx
+      anchor:
+        ref: thumbs_layer_cluster
+      columns:
+        extra:
+          key:
+            column_net: P111
+            width: 1.5kx
+      rows:
+        cluster:
+          shift: [ .5kx, -1ky ]
+          row_net: P011
+  #Kill me slowly
+  mirror:
+    ref: matrix_inner_home
+    distance: 160
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [ px, py ]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-.5]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_hell_top
+          shift: [ -.5px , .5py ]
+        - ref: matrix_inner_top
+          shift: [ 1.5px , .5py ]
+        - ref: matrix_inner_bottom
+          shift: [ 1.5px , -.5py ]
+        - ref: thumbs_space_cluster
+          shift: [ .5px , .5py ]
+        - ref: ethumb_extra_cluster
+          shift: [ 1px , -.5py ]
+        - ref: matrix_hell_last
+          shift: [ -.5px , -.5py ]
+      fillet: 2
+  board2:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_hell_top
+          shift: [ -.5px , .5py ]
+        - ref: mirror_matrix_inner_top
+          shift: [ 1.5px , .5py ]
+        - ref: mirror_matrix_inner_bottom
+          shift: [ 1.5px , -.5py ]
+        - ref: mirror_thumbs_space_cluster
+          shift: [ .5px , .5py ]
+        - ref: mirror_ethumb_extra_cluster
+          shift: [ 1px , -.5py ]
+        - ref: mirror_matrix_hell_last
+          shift: [ -.5px , -.5py ]
+      fillet: 2
+  xlboard:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_hell_top
+          shift: [ -.5dpx , .5dpy ]
+        - ref: matrix_inner_top
+          shift: [ 1.5dpx , .5dpy ]
+        - ref: matrix_inner_bottom
+          shift: [ 1.5dpx , -.5dpy ]
+        - ref: thumbs_space_cluster
+          shift: [ .5dpx , .5dpy ]
+        - ref: ethumb_extra_cluster
+          shift: [ 1dpx , -.5dpy ]
+        - ref: matrix_hell_last
+          shift: [ -.5dpx , -.5dpy ]
+      fillet: 2
+  xlboard2:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: mirror_matrix_hell_top
+          shift: [ -.5dpx , .5dpy ]
+        - ref: mirror_matrix_inner_top
+          shift: [ 1.5dpx , .5dpy ]
+        - ref: mirror_matrix_inner_bottom
+          shift: [ 1.5dpx , -.5dpy ]
+        - ref: mirror_thumbs_space_cluster
+          shift: [ .5dpx , .5dpy ]
+        - ref: mirror_ethumb_extra_cluster
+          shift: [ 1dpx , -.5dpy ]
+        - ref: mirror_matrix_hell_last
+          shift: [ -.5dpx , -.5dpy ]
+      fillet: 2
+  xlboard_cutout:
+    - name: xlboard
+    - operation: subtract
+      name: keys
+  xlboard_cutout2:
+    - name: xlboard2
+    - operation: subtract
+      name: keys
+  mounting:
+    - what: circle
+      radius: screwSize
+      where:
+        ref: ethumb_extra_cluster
+        shift: [ 15  , -6 ]
+    - what: circle
+      radius: screwSize
+      where:
+          ref: matrix_hell_last
+          shift: [ -7 , -5 ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: matrix_ring_bottom
+        shift: [ .5kx , -1.75py ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: matrix_hell_top
+        shift: [ .5px , -.45py ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: matrix_inner_top
+        shift: [ 1px , 4.5 ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: matrix_inner_bottom
+        shift: [ 18 , -8 ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: matrix_middle_home
+        shift: [ -.5kx , -.45py ]
+  mounting2:
+    - what: circle
+      radius: screwSize
+      where:
+        ref: mirror_ethumb_extra_cluster
+        shift: [ 15  , -6 ]
+    - what: circle
+      radius: screwSize
+      where:
+          ref: mirror_matrix_hell_last
+          shift: [ -7 , -5 ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: mirror_matrix_ring_bottom
+        shift: [ .5kx , -1.75py ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: mirror_matrix_hell_top
+        shift: [ .5px , -.45py ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: mirror_matrix_inner_top
+        shift: [ 1px , 4.5 ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: mirror_matrix_inner_bottom
+        shift: [ 18 , -8 ]
+    - what: circle
+      radius: screwSize
+      where:
+        ref: mirror_matrix_middle_home
+        shift: [ -.5kx , -.45py ]
+  standoff:
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: ethumb_extra_cluster
+        shift: [ 15  , -6 ]
+    - what: circle
+      radius: standoffSize
+      where:
+          ref: matrix_hell_last
+          shift: [ -7 , -5 ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: matrix_ring_bottom
+        shift: [ .5kx , -1.75py ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: matrix_hell_top
+        shift: [ .5px , -.45py ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: matrix_inner_top
+        shift: [ 1px , 4.5 ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: matrix_inner_bottom
+        shift: [ 18 , -8 ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: matrix_middle_home
+        shift: [ -.5kx , -.45py ]
+  standoff2:
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: mirror_ethumb_extra_cluster
+        shift: [ 15  , -6 ]
+    - what: circle
+      radius: standoffSize
+      where:
+          ref: mirror_matrix_hell_last
+          shift: [ -7 , -5 ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: mirror_matrix_ring_bottom
+        shift: [ .5kx , -1.75py ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: mirror_matrix_hell_top
+        shift: [ .5px , -.45py ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: mirror_matrix_inner_top
+        shift: [ 1px , 4.5 ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: mirror_matrix_inner_bottom
+        shift: [ 18 , -8 ]
+    - what: circle
+      radius: standoffSize
+      where:
+        ref: mirror_matrix_middle_home
+        shift: [ -.5kx , -.45py ]
+  # Combination preview showing outline and keys.
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
+  combo2:
+    - name: board2
+    - operation: subtract
+      name: keys
+pcbs:
+  theguy:
+    outlines:
+      main:
+        outline: board
+    footprints:
+      keyswitches:
+        what: choc
+        where: /^matrix_|thumbs_|ethumb_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      led:
+        what: sk6812mini
+        where: /^matrix_|thumbs_|ethumb_.*/
+        adjust:
+            shift: [0, -5]
+        params:
+            din: "{{led_in}}"
+            dout: "{{led_out}}"
+            cutout: true
+      diode:
+        what: diode
+        where: /^matrix_|thumbs_|ethumb_.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [ 0 , -8]
+      microcontroller:
+        what: nice_nano
+        params:
+          orientation: "down"
+        where:
+          ref: matrix_inner_bottom
+          shift: [1.1kx , 1.5ky]
+          rotate: -90
+      oled:
+        what: nice_view
+        params:
+          side: "F"
+          SDA: P017
+          SCL: P020
+          CS: P006
+        where:
+          ref: matrix_inner_bottom
+          shift: [1.1kx , .425ky]
+          rotate: 90
+      battery:
+        what: jstph
+        params:
+          pos: pos
+          neg: GND
+        where:
+          ref: matrix_hell_last
+          shift: [1kx , 0ky]
+          rotate: 90
+      reset:
+        what: EVQPUC
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: matrix_inner_bottom
+          shift: [ 1.4px , -0.3py ]
+          rotate: -90
+      power:
+        what: slider
+        params:
+          from: pos
+          to: RAW
+        where:
+          ref: matrix_inner_bottom
+          shift: [ 1.55px , -.8py ]
+          rotate: -60
+      # Mounting holes
+      hole_bottom_right:
+        what: mountinghole
+        where:
+          ref: ethumb_extra_cluster
+          shift: [ 15  , -6 ]
+      hole_bottom_left:
+        what: mountinghole
+        where:
+          ref: matrix_hell_last
+          shift: [ -7 , -5 ]
+      hole_bottom_middle:
+        what: mountinghole
+        where:
+          ref: matrix_ring_bottom
+          shift: [ .5kx , -1.75py ]
+      hole_top_left:
+        what: mountinghole
+        where:
+          ref: matrix_hell_top
+          shift: [ .5px , -.45py ]
+      hole_top_right:
+        what: mountinghole
+        where:
+          ref: matrix_inner_top
+          shift: [ 1px , 4.5 ]
+      hole_middle_right:
+        what: mountinghole
+        where:
+          ref: matrix_inner_bottom
+          shift: [ 18 , -8 ]
+      hole_center:
+        what: mountinghole
+        where:
+          ref: matrix_middle_home
+          shift: [ -.5kx , -.45py ]
+      # PCB text
+      front_text:
+        what: text
+        where: &textWhere
+          ref: matrix_pinky_bottom
+          shift: [ 0 , -12]
+        params: &textParams
+          text: The Absense of Existence
+          justify: left
+          h_size: 2
+          v_size: 2
+          thickness: .4
+  theguy2:
+    outlines:
+      main:
+        outline: board2
+    footprints:
+      keyswitches:
+        what: choc
+        where: /^mirror_matrix_|thumbs_|ethumb_.*/
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      led:
+        what: sk6812mini
+        where: /^mirror_matrix_|thumbs_|ethumb_.*/
+        adjust:
+            shift: [0, -5]
+        params:
+            din: "{{led_in}}"
+            dout: "{{led_out}}"
+            cutout: true
+      diode:
+        what: diode
+        where: /^mirror_matrix_|thumbs_|ethumb_.*/
+        params:
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [ 0 , -8]
+      microcontroller:
+        what: nice_nano
+        params:
+          orientation: "down"
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [1.1kx , 1.5ky]
+          rotate: 90
+      oled:
+        what: nice_view
+        params:
+          side: "F"
+          SDA: P017
+          SCL: P020
+          CS: P006
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [1.1kx , .425ky]
+          rotate: -90
+      battery:
+        what: jstph
+        params:
+          pos: pos
+          neg: GND
+        where:
+          ref: mirror_matrix_hell_last
+          shift: [1kx , 0ky]
+          rotate: 90
+      reset:
+        what: EVQPUC
+        params:
+          from: GND
+          to: RST
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [ 1.4px , -0.3py ]
+          rotate: -90
+      power:
+        what: slider
+        params:
+          from: pos
+          to: RAW
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [ 1.55px , -.8py ]
+          rotate: -60
+      # Mounting holes
+      hole_bottom_right:
+        what: mountinghole
+        where:
+          ref: mirror_ethumb_extra_cluster
+          shift: [ 15  , -6 ]
+      hole_bottom_left:
+        what: mountinghole
+        where:
+          ref: mirror_matrix_hell_last
+          shift: [ -7 , -5 ]
+      hole_bottom_middle:
+        what: mountinghole
+        where:
+          ref: mirror_matrix_ring_bottom
+          shift: [ .5kx , -1.75py ]
+      hole_top_left:
+        what: mountinghole
+        where:
+          ref: mirror_matrix_hell_top
+          shift: [ .5px , -.45py ]
+      hole_top_right:
+        what: mountinghole
+        where:
+          ref: mirror_matrix_inner_top
+          shift: [ 1px , 4.5 ]
+      hole_middle_right:
+        what: mountinghole
+        where:
+          ref: mirror_matrix_inner_bottom
+          shift: [ 18 , -8 ]
+      hole_center:
+        what: mountinghole
+        where:
+          ref: mirror_matrix_middle_home
+          shift: [ -.5kx , -.45py ]
+      # PCB text
+      front_text:
+        what: text
+        where: &textWhere
+          ref: mirror_matrix_pinky_bottom
+          shift: [ 0 , -12]
+        params: &textParams
+          text: The Absense of Existence
+          justify: left
+          h_size: 2
+          v_size: 2
+          thickness: .4
+cases:
+  plate:
+    - name: xlboard_cutout
+      extrude: 1
+  bottom:
+    - name: board
+      extrude: 1.5
+  bottom2:
+    - name: board2
+      extrude: 1.5
+  xlBottom:
+    - name: xlboard
+      extrude: 1.5
+  xlBottom2:
+    - name: xlboard2
+      extrude: 1.5
+  outerWall:
+    - name: xlboard
+      extrude: 8
+  outerWall2:
+    - name: xlboard2
+      extrude: 8
+  innerWall:
+    - name: board
+      extrude: 8
+  innerWall2:
+    - name: board2
+      extrude: 8
+  wall:
+    - what: case
+      name: outerWall
+      operation: add
+    - what: case
+      name: innerWall
+      operation: subtract
+  wall2:
+    - what: case
+      name: outerWall2
+      operation: add
+    - what: case
+      name: innerWall2
+      operation: subtract
+  holes:
+    - name: mounting
+      extrude: 8
+  holes2:
+    - name: mounting2
+      extrude: 8
+  standoffs:
+    - name: standoff
+      extrude: 8
+  standoffs2:
+    - name: standoff2
+      extrude: 8
+  case:
+    - what: case
+      name: standoffs
+      operation: add
+    - what: case
+      name: holes
+      operation: subtract
+    - what: case
+      name: xlBottom
+      operation: add
+    - what: case
+      name: wall
+      operation: add
+  case2:
+    - what: case
+      name: standoffs2
+      operation: add
+    - what: case
+      name: holes2
+      operation: subtract
+    - what: case
+      name: xlBottom2
+      operation: add
+    - what: case
+      name: wall2
+      operation: add
