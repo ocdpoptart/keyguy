@@ -168,12 +168,26 @@ outlines:
       where: /^matrix_|thumbs_|ethumb_.*/
       what: rectangle
       size: [ 14 , 14 ]
+    - operation: subtract
+      where:
+          ref: matrix_inner_bottom
+          shift: [1.25kx , 1.3ky]
+          rotate: -90
+      what: rectangle
+      size: [ 2.5kx , 1.5ky ]
   xlboard_cutout2:
     - name: xlboard2
     - operation: subtract
       where: /^mirror_matrix_|thumbs_|ethumb_.*/
       what: rectangle
       size: [ 14 , 14 ]
+    - operation: subtract
+      where:
+          ref: mirror_matrix_inner_bottom
+          shift: [1.25kx , 1.3ky]
+          rotate: -90
+      what: rectangle
+      size: [ 2.5kx , 1.5ky ]
   mounting:
     - what: circle
       radius: screwSize
