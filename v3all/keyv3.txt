@@ -165,11 +165,15 @@ outlines:
   xlboard_cutout:
     - name: xlboard
     - operation: subtract
-      name: keys
+      where: /^matrix_|thumbs_|ethumb_.*/
+      what: rectangle
+      size: [ 14 , 14 ]
   xlboard_cutout2:
     - name: xlboard2
     - operation: subtract
-      name: keys
+      where: /^mirror_matrix_|thumbs_|ethumb_.*/
+      what: rectangle
+      size: [ 14 , 14 ]
   mounting:
     - what: circle
       radius: screwSize
