@@ -1,0 +1,6 @@
+this should be an almost complete version
+
+-everything about the plate was corrected
+-the case is now a proper size
+    *still want to correct the holes and standoffs so the board can be in the case instead of on top
+-the board should be complete will depend on if leds work
