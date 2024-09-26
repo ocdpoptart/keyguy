@@ -1,0 +1,7 @@
+so after taking forever to finish the keyboard you succeeded
+
+now the issue is that it was flawed from the start now onto the changes
+
+- first a different oled (this is because the nice view steals the rgb pin)
+- next change the led tolerances because depending on the saulder job the keys can hit them (push them up like half a mil)
+- maybe add more with use of the keyboard get used to it and if there are complaints then they can be corrected for v2
