@@ -2,6 +2,8 @@ so after taking forever to finish the keyboard you succeeded
 
 now the issue is that it was flawed from the start now onto the changes
 
-- first a different oled (this is because the nice view steals the rgb pin)
+- first a different oled (this is because the nice view steals the rgb pin) [there is an example of this in your saved bookmarks]
 - next change the led tolerances because depending on the saulder job the keys can hit them (push them up like half a mil)
 - maybe add more with use of the keyboard get used to it and if there are complaints then they can be corrected for v2
+- I like the height of the overall product as it is in v1, so raise just the outer walls of the case no need to change the thickness of bottom plate or the height of the standoffs, this raised outer wall will allow the plate to fit in snug and not be a nuicense while protecting the board more (this will force you to have to make case cutouts for the usbc port and the pwr/rst switch, hurray blender or freecad) [18mm height for the outer wall]
+-
