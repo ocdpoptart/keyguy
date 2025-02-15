@@ -28,7 +28,7 @@ points:
         top.row_net: P010
       columns:
         hell:
-          key.column_net: P111
+          key.column_net: P031
           rows:
             last:
               led_in: "rgb_{{name}}"
@@ -42,7 +42,7 @@ points:
               led_in: "rgb_{{name}}"
               led_out: rgb_matrix_hell_home
         pinky:
-          key.column_net: P113
+          key.column_net: P029
           rows:
             last.skip: true
             bottom:
@@ -55,7 +55,7 @@ points:
               led_in: "rgb_{{name}}"
               led_out: rgb_matrix_hell_top
         ring:
-          key.column_net: P115
+          key.column_net: P002
           rows:
             last.skip: true
             bottom:
@@ -68,7 +68,7 @@ points:
               led_in: "rgb_{{name}}"
               led_out: rgb_matrix_ring_home
         middle:
-          key.column_net: P002
+          key.column_net: P115
           rows:
             last.skip: true
             bottom:
@@ -81,7 +81,7 @@ points:
               led_in: "rgb_{{name}}"
               led_out: rgb_matrix_ring_top
         index:
-          key.column_net: P029
+          key.column_net: P113
           rows:
             last.skip: true
             bottom:
@@ -94,7 +94,7 @@ points:
               led_in: "rgb_{{name}}"
               led_out: rgb_matrix_index_home
         inner:
-          key.column_net: P031
+          key.column_net: P111
           rows:
             last.skip: true
             bottom:
@@ -116,13 +116,13 @@ points:
       columns:
         layer:
           key:
-            column_net: P029
+            column_net: P113
             splay: -20
             led_in: "rgb_{{name}}"
             led_out: rgb_matrix_index_bottom
         space:
           key:
-            column_net: P031
+            column_net: P111
             led_in: "rgb_{{name}}"
             led_out: rgb_thumbs_layer_cluster
       rows:
@@ -138,7 +138,7 @@ points:
       columns:
         extra:
           key:
-            column_net: P031
+            column_net: P111
             width: 1.5kx
             led_in: P006
             led_out: rgb_matrix_inner_bottom
