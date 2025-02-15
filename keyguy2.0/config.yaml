@@ -145,7 +145,7 @@ points:
       rows:
         cluster:
           shift: [ .5kx, -1ky ]
-          row_net: P011
+          row_net: P106
   #Kill me slowly
   mirror:
     ref: matrix_inner_home
