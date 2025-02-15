@@ -128,7 +128,7 @@ points:
       rows:
         cluster:
           shift: [ .75kx , -1ky]
-          row_net: P010
+          row_net: P104
     ethumb:
       key:
         padding: 1ky
