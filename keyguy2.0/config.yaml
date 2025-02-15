@@ -21,33 +21,91 @@ points:
       key:
         padding: 1ky
         spread: 1kx
+      rows:
+        last.row_net: P106
+        bottom.row_net: P104
+        home.row_net: P009
+        top.row_net: P010
       columns:
         hell:
-          key.column_net: P031
-        pinky:
-          key.column_net: P029
-          rows.last.skip: true
-        ring:
-          key.column_net: P002
-          rows.last.skip: true
-        middle:
-          key.column_net: P115
-          rows.last.skip: true
-        index:
-          key.column_net: P113
-          rows.last.skip: true
-        inner:
           key.column_net: P111
-          rows.last.skip: true
-      rows:
-        last:
-          row_net: P010
-        bottom:
-          row_net: P009
-        home:
-          row_net: P106
-        top:
-          row_net: P104
+          rows:
+            last:
+              led_in: "rgb_{{name}}"
+            bottom:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_hell_last
+            home:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_hell_bottom
+            top:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_hell_home
+        pinky:
+          key.column_net: P113
+          rows:
+            last.skip: true
+            bottom:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_pinky_home
+            home:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_pinky_top
+            top:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_hell_top
+        ring:
+          key.column_net: P115
+          rows:
+            last.skip: true
+            bottom:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_pinky_bottom
+            home:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_ring_bottom
+            top:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_ring_home
+        middle:
+          key.column_net: P002
+          rows:
+            last.skip: true
+            bottom:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_middle_home
+            home:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_middle_top
+            top:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_ring_top
+        index:
+          key.column_net: P029
+          rows:
+            last.skip: true
+            bottom:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_thumbs_space_cluster
+            home:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_index_bottom
+            top:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_index_home
+        inner:
+          key.column_net: P031
+          rows:
+            last.skip: true
+            bottom:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_inner_home
+            home:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_inner_top
+            top:
+              led_in: "rgb_{{name}}"
+              led_out: rgb_matrix_index_top
     thumbs:
       key:
         padding: 1ky
@@ -58,10 +116,15 @@ points:
       columns:
         layer:
           key:
-            column_net: P113
+            column_net: P029
             splay: -20
+            led_in: "rgb_{{name}}"
+            led_out: rgb_matrix_index_bottom
         space:
-          key.column_net: P111
+          key:
+            column_net: P031
+            led_in: "rgb_{{name}}"
+            led_out: rgb_thumbs_layer_cluster
       rows:
         cluster:
           shift: [ .75kx , -1ky]
@@ -75,8 +138,10 @@ points:
       columns:
         extra:
           key:
-            column_net: P111
+            column_net: P031
             width: 1.5kx
+            led_in: P006
+            led_out: rgb_matrix_inner_bottom
       rows:
         cluster:
           shift: [ .5kx, -1ky ]
@@ -362,8 +427,8 @@ pcbs:
         adjust:
             shift: [0, -4.7]
         params:
-            din: P006
-            dout: P006
+            din: "{{led_in}}"
+            dout: "{{led_out}}"
             cutout: true
       diode:
         what: diode
@@ -487,8 +552,8 @@ pcbs:
         adjust:
             shift: [0, -4.7]
         params:
-            din: P006
-            dout: P006
+            din: "{{led_in}}"
+            dout: "{{led_out}}"
             cutout: true
       diode:
         what: diode
