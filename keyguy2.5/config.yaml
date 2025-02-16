@@ -660,22 +660,22 @@ pcbs:
 cases:
   plate:
     - name: xlboard_cutout
-      extrude: 3
+      extrude: 1.5
   plate2:
     - name: xlboard2_cutout
-      extrude: 3
+      extrude: 1.5
   bottom:
     - name: board
-      extrude: 5
+      extrude: 1.5
   bottom2:
     - name: board2
-      extrude: 5
+      extrude: 1.5
   xlBottom:
     - name: xlboard
-      extrude: 5
+      extrude: 1.5
   xlBottom2:
     - name: xlboard2
-      extrude: 5
+      extrude: 1.5
   outerWall:
     - name: xlboard
       extrude: 12
