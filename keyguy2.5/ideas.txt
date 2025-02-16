@@ -1,6 +1,7 @@
 IDEAS:
     -holes/space for screen niceview screen protector
-    -depending on how you like the 2.0 case possibly make adjustments to allow fit with the screen protector (and better protection of keys and pcb)
+    -depending on how you like the 2.0 case possibly make adjustments to allow fit with the screen protector (and better protection of keys and pcb) [you also bought batteries too big for the case so if you don't like the case size which you may not you can adjust to accomadate them]
+
 TO ADD:
 
 DONE:
