@@ -1,0 +1,7 @@
+IDEAS:
+    -holes/space for screen niceview screen protector
+    -depending on how you like the 2.0 case possibly make adjustments to allow fit with the screen protector (and better protection of keys and pcb)
+TO ADD:
+
+DONE:
+    - change mounting hole sizes from m2.5 to m2
