@@ -678,16 +678,16 @@ cases:
       extrude: 1.5
   outerWall:
     - name: xlboard
-      extrude: 12
+      extrude: 14
   outerWall2:
     - name: xlboard2
-      extrude: 12
+      extrude: 14
   innerWall:
     - name: board
-      extrude: 12
+      extrude: 14
   innerWall2:
     - name: board2
-      extrude: 12
+      extrude: 14
   wall:
     - what: case
       name: outerWall
@@ -704,16 +704,16 @@ cases:
       operation: subtract
   holes:
     - name: mounting
-      extrude: 8
+      extrude: 12
   holes2:
     - name: mounting2
-      extrude: 8
+      extrude: 12
   standoffs:
     - name: standoff
-      extrude: 8
+      extrude: 12
   standoffs2:
     - name: standoff2
-      extrude: 8
+      extrude: 12
   case:
     - what: case
       name: standoffs
