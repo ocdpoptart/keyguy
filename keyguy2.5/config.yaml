@@ -86,7 +86,7 @@ points:
             last.skip: true
             bottom:
               led_in: "rgb_{{name}}"
-              led_out: rgb_thumbs_space_cluster
+              led_out: rgb_matrix_middle_bottom
             home:
               led_in: "rgb_{{name}}"
               led_out: rgb_matrix_index_bottom
@@ -119,7 +119,7 @@ points:
             column_net: P113
             splay: -20
             led_in: "rgb_{{name}}"
-            led_out: rgb_matrix_index_bottom
+            led_out: rgb_matrix_innner_bottom
         space:
           key:
             column_net: P111
@@ -141,7 +141,7 @@ points:
             column_net: P111
             width: 1.5kx
             led_in: P006
-            led_out: rgb_matrix_inner_bottom
+            led_out: rgb_thumbs_space_cluster
       rows:
         cluster:
           shift: [ .5kx, -1ky ]

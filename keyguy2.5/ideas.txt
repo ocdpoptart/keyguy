@@ -3,6 +3,6 @@ IDEAS:
     -depending on how you like the 2.0 case possibly make adjustments to allow fit with the screen protector (and better protection of keys and pcb) [you also bought batteries too big for the case so if you don't like the case size which you may not you can adjust to accomadate them]
 
 TO ADD:
-
+    - correct the led matrix so that they are all connected to the pin and work properly made that mistake again with these fucking leds
 DONE:
     - change mounting hole sizes from m2.5 to m2
