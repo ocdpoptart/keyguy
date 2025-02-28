@@ -7,3 +7,5 @@ X - next change the led tolerances because depending on the saulder job the keys
 X - maybe add more with use of the keyboard get used to it and if there are complaints then they can be corrected for v2
 - I like the height of the overall product as it is in v1, so raise just the outer walls of the case no need to change the thickness of bottom plate or the height of the standoffs, this raised outer wall will allow the plate to fit in snug and not be a nuicense while protecting the board more (this will force you to have to make case cutouts for the usbc port and the pwr/rst switch, hurray blender or freecad) [18mm height for the outer wall]
 -
+
+COMPLETELY UNUSABLE ACCIDENTLY WIRED 4 KEYS EXACTLY THE SAME LIKE AN IDIOT

@@ -128,7 +128,7 @@ points:
       rows:
         cluster:
           shift: [ .75kx , -1ky]
-          row_net: P104
+          row_net: P106
     ethumb:
       key:
         padding: 1ky
@@ -145,7 +145,7 @@ points:
       rows:
         cluster:
           shift: [ .5kx, -1ky ]
-          row_net: P106
+          row_net: P011
   #Kill me slowly
   mirror:
     ref: matrix_inner_home
